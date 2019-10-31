@@ -13,7 +13,7 @@ then
       echo "Creating resource group $RESOURCE_GROUP_NAME"
       az group create --name $RESOURCE_GROUP_NAME --location $REGION
 else
-      echo "Resource group $RESOURCE_GROUP_NAME already exist...skip"
+      echo "Resource group $RESOURCE_GROUP_NAME already exist..."
 fi
 
 # Create storage account for terrraform state
@@ -27,7 +27,7 @@ then
       echo "Creating storage container $CONTAINER_NAME"
       az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME --fail-on-exist
 else
-      echo "Storage account $STORAGE_ACCOUNT_NAME already exist...skip"
+      echo "Storage account $STORAGE_ACCOUNT_NAME already exist..."
 fi
 
 echo "storage_account_name: $STORAGE_ACCOUNT_NAME"
@@ -36,4 +36,4 @@ echo "access_key: Get the access key in the azure console, then create a storage
 
 # Get storage account key
 # ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query [0].value -o tsv)
-#echo "access_key: $ACCOUNT_KEY"
+# echo "access_key: $ACCOUNT_KEY"
